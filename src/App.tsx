@@ -75,7 +75,7 @@ const App = () => (
             {/* Public routes */}
             <Route element={<PublicLayout />}>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/dashboard" element={<PublicDashboard />} />
+              <Route path="/dashboard" element={<LandingPage />} />
               <Route path="/menu-sekolah" element={<MenuSekolahPage />} />
               <Route path="/laporan" element={<LaporanPage />} />
               <Route path="/monitoring-kasus" element={<MonitoringKasusPage />} />
