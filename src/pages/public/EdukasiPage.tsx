@@ -5,9 +5,6 @@ import { artikelList, tips } from '@/data/mockData';
 
 
 
-/* ─────────────────────────────────
-   ARTICLE MODAL
-   ───────────────────────────────── */
 const ArticleModal: React.FC<{ artikel: typeof artikelList[0]; onClose: () => void }> = ({ artikel, onClose }) => (
   <div
     onClick={onClose}
@@ -43,9 +40,6 @@ const ArticleModal: React.FC<{ artikel: typeof artikelList[0]; onClose: () => vo
   </div>
 );
 
-/* ─────────────────────────────────
-   MAIN PAGE
-   ───────────────────────────────── */
 const EdukasiPage: React.FC = () => {
   const isMobile = useIsMobile();
   const [activeArtikel, setActiveArtikel] = useState<typeof artikelList[0] | null>(null);
@@ -60,7 +54,7 @@ const EdukasiPage: React.FC = () => {
 
       <div style={{ maxWidth: 1240, margin: '0 auto', padding: isMobile ? '24px 16px' : '40px 24px' }}>
 
-        {/* ── Header ── */}
+
         <div style={{ marginBottom: isMobile ? 24 : 36 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
             <div style={{ width: 40, height: 40, background: '#EBF5F0', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -73,7 +67,6 @@ const EdukasiPage: React.FC = () => {
           </p>
         </div>
 
-        {/* ── Featured Article ── */}
         <div
           onClick={() => setActiveArtikel(artikelList[0])}
           style={{
@@ -112,7 +105,6 @@ const EdukasiPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Filter kategori ── */}
         <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
           {kategoriList.map(k => (
             <button
@@ -132,7 +124,7 @@ const EdukasiPage: React.FC = () => {
           ))}
         </div>
 
-        {/* ── Article Grid ── */}
+      
         <div style={{
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
@@ -189,7 +181,7 @@ const EdukasiPage: React.FC = () => {
           ))}
         </div>
 
-        {/* ── Tips Gizi ── */}
+
         <div style={{ marginBottom: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
             <div style={{ width: 36, height: 36, background: '#FFF8EC', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

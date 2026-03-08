@@ -2,25 +2,8 @@ import React from 'react';
 import StatCard from '@/components/StatCard';
 import { Flame, Beef, Wheat, Droplets } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, RadarChart, PolarGrid, PolarAngleAxis, Radar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { weeklyMenu, kasusPerBulan, radarData } from '@/data/mockData';
 
-const weeklyMenu = [
-  { minggu: 'W1', kalori: 680, protein: 28, karbo: 85, lemak: 22 },
-  { minggu: 'W2', kalori: 720, protein: 32, karbo: 90, lemak: 20 },
-  { minggu: 'W3', kalori: 695, protein: 30, karbo: 82, lemak: 24 },
-  { minggu: 'W4', kalori: 740, protein: 35, karbo: 88, lemak: 21 },
-  { minggu: 'W5', kalori: 710, protein: 31, karbo: 86, lemak: 23 },
-  { minggu: 'W6', kalori: 760, protein: 36, karbo: 92, lemak: 19 },
-];
-
-const kasusPerBulan = [
-  { bulan: 'Sep', kasus: 8 }, { bulan: 'Okt', kasus: 12 }, { bulan: 'Nov', kasus: 10 },
-  { bulan: 'Des', kasus: 15 }, { bulan: 'Jan', kasus: 18 }, { bulan: 'Feb', kasus: 14 }, { bulan: 'Mar', kasus: 6 },
-];
-
-const radarData = [
-  { subject: 'Kalori', A: 85 }, { subject: 'Protein', A: 78 }, { subject: 'Karbohidrat', A: 90 },
-  { subject: 'Lemak', A: 72 }, { subject: 'Serat', A: 65 }, { subject: 'Vitamin', A: 80 },
-];
 
 const PublicDashboard: React.FC = () => (
   <div className="container mx-auto px-4 py-10">

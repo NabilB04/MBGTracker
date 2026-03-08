@@ -110,7 +110,6 @@ const MonitoringKasusPage: React.FC = () => {
     <div style={{ background: '#F7F8FA', minHeight: '100vh' }}>
       <div style={{ maxWidth: 1240, margin: '0 auto', padding: '40px 24px' }}>
 
-        {/* Header */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
             <div style={{ width: 40, height: 40, background: '#FFF1F0', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -121,7 +120,6 @@ const MonitoringKasusPage: React.FC = () => {
           <p style={{ color: '#6B7280', fontSize: 15 }}>Pantau kasus terkait program MBG di wilayah Jabodetabek secara real-time</p>
         </div>
 
-        {/* Stat Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 28 }}>
           {[
             { icon: AlertTriangle, label: 'Total Kasus Bulan Ini', value: monitoringKasusList.length, color: '#1F2937', bg: '#F7F8FA', border: '#E8ECF0' },
@@ -137,10 +135,10 @@ const MonitoringKasusPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Map + Sidebar */}
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: 20, marginBottom: 24 }}>
 
-          {/* Map */}
+
           <div style={{ background: 'white', borderRadius: 16, boxShadow: '0 2px 12px rgba(0,0,0,0.06)', overflow: 'hidden', border: '1px solid #E8ECF0' }}>
             <div style={{ padding: '18px 20px 12px', borderBottom: '1px solid #F0F0F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
@@ -161,9 +159,9 @@ const MonitoringKasusPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Side Panel */}
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {/* Search + Filter */}
+
             <div style={{ background: 'white', borderRadius: 14, padding: '16px', border: '1px solid #E8ECF0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
               <div style={{ position: 'relative', marginBottom: 12 }}>
                 <Search size={14} color="#9CA3AF" style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)' }} />
@@ -189,7 +187,7 @@ const MonitoringKasusPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Case List */}
+
             <div style={{ background: 'white', borderRadius: 14, border: '1px solid #E8ECF0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', overflow: 'hidden', flex: 1 }}>
               <div style={{ padding: '14px 16px', borderBottom: '1px solid #F0F0F0' }}>
                 <h3 style={{ fontWeight: 700, fontSize: 14, color: '#1F2937' }}>Daftar Kasus ({filtered.length})</h3>
@@ -219,7 +217,7 @@ const MonitoringKasusPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Selected Case Detail */}
+
         {selectedCase && (
           <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: `2px solid #FC5F53`, marginBottom: 24, boxShadow: '0 4px 20px rgba(252,95,83,0.12)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
@@ -259,9 +257,9 @@ const MonitoringKasusPage: React.FC = () => {
           </div>
         )}
 
-        {/* Chart + Table */}
+
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
-          {/* Bar chart */}
+
           <div style={{ background: 'white', borderRadius: 16, padding: '24px', border: '1px solid #E8ECF0', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
             <h3 style={{ fontWeight: 700, fontSize: 16, color: '#1F2937', marginBottom: 4 }}>Kasus per Bulan</h3>
             <p style={{ fontSize: 12, color: '#9CA3AF', marginBottom: 20 }}>Sep 2025 – Mar 2026</p>

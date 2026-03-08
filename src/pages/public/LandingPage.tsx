@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { School, Users, FileText, ArrowRight, Flame, Beef, Wheat, Droplets, ShieldCheck, BarChart3, Utensils, HeartPulse, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Youtube, ChevronRight } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, RadarChart, PolarGrid, PolarAngleAxis, Radar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, AreaChart, Area } from 'recharts';
 import StatCard from '@/components/StatCard';
+import { weeklyMenu } from '@/data/mockData';
 
 
 const CountUpNumber: React.FC<{ end: number; suffix?: string; decimals?: number }> = ({ end, suffix = '', decimals = 0 }) => {
@@ -31,14 +32,6 @@ const CountUpNumber: React.FC<{ end: number; suffix?: string; decimals?: number 
   return <div ref={ref} className="text-3xl md:text-4xl font-heading font-bold text-primary">{count.toLocaleString('id-ID')}{suffix}</div>;
 };
 
-const weeklyMenu = [
-  { minggu: 'W1', kalori: 680, protein: 28, karbo: 85, lemak: 22 },
-  { minggu: 'W2', kalori: 720, protein: 32, karbo: 90, lemak: 20 },
-  { minggu: 'W3', kalori: 695, protein: 30, karbo: 82, lemak: 24 },
-  { minggu: 'W4', kalori: 740, protein: 35, karbo: 88, lemak: 21 },
-  { minggu: 'W5', kalori: 710, protein: 31, karbo: 86, lemak: 23 },
-  { minggu: 'W6', kalori: 760, protein: 36, karbo: 92, lemak: 19 },
-];
 
 const kasusPerBulan = [
   { bulan: 'Sep', kasus: 8 }, { bulan: 'Okt', kasus: 12 }, { bulan: 'Nov', kasus: 10 },
@@ -56,11 +49,6 @@ const trendGizi = [
 ];
 
 const LandingPage: React.FC = () => {
-  const issues = [
-    { emoji: '📰', title: 'Temuan Susu Kadaluarsa di SDN Menteng 2', desc: 'Petugas menemukan 50 kotak susu UHT yang melewati tanggal kedaluwarsa dalam gudang penyimpanan.', date: '7 Mar 2026', tag: 'Investigasi' },
-    { emoji: '✅', title: 'Peningkatan Kualitas Menu di SPPG Ciputat', desc: 'SPPG Ciputat berhasil meningkatkan skor gizi rata-rata dari 72 menjadi 88 dalam 2 bulan terakhir.', date: '5 Mar 2026', tag: 'Positif' },
-    { emoji: '♻️', title: 'Program Zero Waste di SDN Cibubur 3', desc: 'Inisiatif pengurangan sisa makanan berhasil mengurangi limbah organik hingga 40% dalam sebulan.', date: '3 Mar 2026', tag: 'Lingkungan' },
-  ];
 
   const features = [
     { icon: BarChart3, title: 'Dashboard Real-time', desc: 'Pantau statistik gizi dan laporan secara langsung dengan data terupdate.' },
@@ -73,7 +61,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <div>
-      {/* Hero */}
+    
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         <div className="absolute inset-0 gradient-hero opacity-[0.06]" />
         <div className="absolute top-20 right-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
@@ -118,7 +106,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats Counter */}
+
       <section className="py-20 bg-card relative">
         <div className="absolute inset-0 bg-gradient-to-b from-background to-card" />
         <div className="container mx-auto px-4 relative">
@@ -144,7 +132,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features */}
+    
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
@@ -166,7 +154,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Dashboard Section */}
+      
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -175,7 +163,6 @@ const LandingPage: React.FC = () => {
             <p className="text-muted-foreground mt-2">Data gizi dan monitoring secara real-time</p>
           </div>
 
-          {/* Nutrition Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             <StatCard icon={Flame} label="Rata-rata Kalori" value="718 kcal" trend="+3.2% dari minggu lalu" trendUp />
             <StatCard icon={Beef} label="Rata-rata Protein" value="32g" trend="+5.1%" trendUp />
@@ -254,7 +241,7 @@ const LandingPage: React.FC = () => {
       </section>
 
 
-      {/* Issues / News — IMPROVED */}
+   
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-14">
@@ -283,12 +270,12 @@ const LandingPage: React.FC = () => {
                   <circle cx="78" cy="28" r="10" fill="none" stroke="#ef4444" strokeWidth="2"/>
                   <line x1="73" y1="23" x2="83" y2="33" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"/>
                   <line x1="83" y1="23" x2="73" y2="33" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"/>
-                  {/* Label kadaluarsa */}
+       
                   <rect x="22" y="76" width="64" height="16" rx="8" fill="#ef4444" opacity="0.9"/>
                   <text x="54" y="88" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">KADALUARSA</text>
                 </svg>
                 <span className="absolute top-3 left-3 text-xs bg-red-500 text-white font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
-                  {/* Shield alert icon */}
+              
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
                   </svg>
@@ -341,21 +328,21 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3 – Lingkungan */}
+
             <div className="group relative bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden border border-border/50 flex flex-col animate-fade-in" style={{ animationDelay: '200ms' }}>
               <div className="relative h-44 bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-950/30 dark:to-cyan-950/30 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 opacity-10"
                   style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #14b8a6 0%, transparent 60%)' }} />
                 <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="drop-shadow-md">
-                  {/* Daur ulang / leaf */}
+       
                   <circle cx="60" cy="50" r="30" fill="#99f6e4" opacity="0.4"/>
-                  {/* Leaf shape */}
+               
                   <path d="M60 25 C80 25 85 45 70 60 C60 70 40 65 40 50 C40 35 50 25 60 25Z" fill="#14b8a6" opacity="0.85"/>
                   <path d="M60 70 C60 70 58 55 65 45" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  {/* Recycle arrows */}
+        
                   <path d="M30 55 Q25 45 35 38" stroke="#0d9488" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
                   <path d="M35 38 L30 33 M35 38 L40 35" stroke="#0d9488" strokeWidth="2" strokeLinecap="round"/>
-                  {/* Percent badge */}
+               
                   <circle cx="88" cy="25" r="12" fill="#0d9488" opacity="0.9"/>
                   <text x="88" y="30" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">-40%</text>
                 </svg>
@@ -391,7 +378,6 @@ const LandingPage: React.FC = () => {
 
 
 
-      {/* CTA */}
       <section className="py-24 gradient-hero relative overflow-hidden">
 
         <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none" />
@@ -429,7 +415,7 @@ const LandingPage: React.FC = () => {
             </p>
 
 
-            {/* CTA Buttons */}
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/laporan">
                 <Button size="lg" variant="secondary" className="rounded-xl px-8 h-12 text-base font-semibold shadow-lg hover:scale-105 transition-transform">

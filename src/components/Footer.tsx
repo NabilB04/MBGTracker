@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
       <footer className="bg-secondary text-secondary-foreground">
-        {/* Main footer */}
+
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {/* Brand */}
+   
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🍱</span>
@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
+     
             <div>
               <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Menu Utama</h4>
               <ul className="space-y-2.5">
@@ -39,7 +39,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Info */}
+   
             <div>
               <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Informasi</h4>
               <ul className="space-y-2.5">
@@ -53,7 +53,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact */}
+        
             <div>
               <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Hubungi Kami</h4>
               <ul className="space-y-3">
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
+       
         <div className="border-t border-secondary-foreground/10">
           <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-xs text-secondary-foreground/40">© 2026 MbgTrack — Platform Monitoring MBG Indonesia. Hak cipta dilindungi.</p>

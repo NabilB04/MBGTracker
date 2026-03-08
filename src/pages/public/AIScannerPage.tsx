@@ -8,9 +8,7 @@ import {
   Camera, Clock, Calendar, User,
 } from 'lucide-react';
 
-/* ─────────────────────────────────
-   MOCK DATA
-   ───────────────────────────────── */
+
 const mockResult = {
   items: [
     { nama: 'Nasi Putih (1 porsi ~200g)',  confidence: 96, kalori: 260, icon: '🌾' },
@@ -52,9 +50,6 @@ const scanHistory = [
   },
 ];
 
-/* ─────────────────────────────────
-   HELPERS
-   ───────────────────────────────── */
 const pct = (val: number, akg: number) => Math.min(Math.round((val / akg) * 100), 100);
 
 const ProgressBar: React.FC<{ value: number; color: string; bg: string }> = ({ value, color, bg }) => (
@@ -68,9 +63,7 @@ const ProgressBar: React.FC<{ value: number; color: string; bg: string }> = ({ v
   </div>
 );
 
-/* ─────────────────────────────────
-   STEP BADGE
-   ───────────────────────────────── */
+
 const StepBadge: React.FC<{ n: number; label: string; active: boolean }> = ({ n, label, active }) => (
   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
     <div style={{
@@ -84,9 +77,7 @@ const StepBadge: React.FC<{ n: number; label: string; active: boolean }> = ({ n,
   </div>
 );
 
-/* ─────────────────────────────────
-   SKOR RING
-   ───────────────────────────────── */
+
 const ScoreRing: React.FC<{ skor: number }> = ({ skor }) => {
   const r = 44;
   const circ = 2 * Math.PI * r;
@@ -109,9 +100,7 @@ const ScoreRing: React.FC<{ skor: number }> = ({ skor }) => {
   );
 };
 
-/* ─────────────────────────────────
-   MAIN PAGE
-   ───────────────────────────────── */
+
 const AIScannerPage: React.FC = () => {
   const isMobile = useIsMobile();
   const [hasImage, setHasImage] = useState(false);
@@ -170,7 +159,7 @@ const AIScannerPage: React.FC = () => {
           </p>
         </div>
 
-        {/* ── Info banner ── */}
+
         <div style={{ background: '#EBF5F0', borderRadius: 12, padding: '12px 16px', marginBottom: 24, display: 'flex', gap: 10, alignItems: 'flex-start', border: '1px solid #A7D9C3' }}>
           <Info size={15} color="#2D6A4F" style={{ marginTop: 1, flexShrink: 0 }} />
           <p style={{ fontSize: 13, color: '#2D6A4F', lineHeight: 1.6 }}>
@@ -178,7 +167,7 @@ const AIScannerPage: React.FC = () => {
           </p>
         </div>
 
-        {/* ── Step indicator ── */}
+     
         {!result && (
           <div style={{ display: 'flex', gap: isMobile ? 16 : 32, marginBottom: 24, flexWrap: 'wrap' }}>
             <StepBadge n={1} label="Upload Foto" active={true} />
@@ -233,7 +222,7 @@ const AIScannerPage: React.FC = () => {
               <p style={{ fontWeight: 700, fontSize: 17, color: '#1F2937', marginBottom: 6 }}>AI Sedang Menganalisis</p>
               <p style={{ fontSize: 13, color: '#9CA3AF', marginBottom: 24 }}>{progressLabel}</p>
 
-              {/* Progress bar */}
+          
               <div style={{ maxWidth: 400, margin: '0 auto', marginBottom: 12 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: '#9CA3AF', marginBottom: 6 }}>
                   <span>Progres analisis</span>
@@ -244,7 +233,7 @@ const AIScannerPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Animated steps */}
+             
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 320, margin: '0 auto', marginTop: 20 }}>
                 {[
                   { Icon: FlaskConical, label: 'Preprocessing gambar' },
@@ -270,10 +259,10 @@ const AIScannerPage: React.FC = () => {
             </div>
           )}
 
-          {/* RESULT STATE */}
+        
           {result && (
             <div>
-              {/* Result header */}
+
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
                 <div>
                   <div style={{ display: 'flex', gap: 8, marginBottom: 10, flexWrap: 'wrap' }}>
@@ -293,7 +282,7 @@ const AIScannerPage: React.FC = () => {
                 <ScoreRing skor={result.skor} />
               </div>
 
-              {/* Detected foods */}
+           
               <div style={{ marginBottom: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 12 }}>
                   <ScanLine size={15} color="#FC5F53" />
@@ -320,7 +309,7 @@ const AIScannerPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Nutrition breakdown */}
+     
               <div style={{ marginBottom: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 12 }}>
                   <FlaskConical size={15} color="#FC5F53" />
@@ -351,7 +340,7 @@ const AIScannerPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Recommendation */}
+
               <div style={{ background: '#FFF8EC', border: '1px solid #FDE68A', borderRadius: 12, padding: '14px 16px', marginBottom: 20, display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                 <TrendingUp size={15} color="#D97706" style={{ marginTop: 1, flexShrink: 0 }} />
                 <div>
@@ -367,7 +356,7 @@ const AIScannerPage: React.FC = () => {
           )}
         </div>
 
-        {/* ── Scan History ── */}
+      
         <div style={card({ padding: isMobile ? '18px 16px' : '24px 28px' })}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
             <History size={16} color="#6B7280" />

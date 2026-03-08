@@ -24,7 +24,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ links, accentClass = 
 
   return (
     <div className="min-h-screen flex w-full">
-      {/* Sidebar */}
+  
       <aside
         className={`${accentClass} text-secondary-foreground fixed inset-y-0 left-0 z-40 flex flex-col transition-all duration-300
           ${collapsed ? 'w-16' : 'w-64'}
@@ -83,7 +83,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ links, accentClass = 
         </div>
       </aside>
 
-      {/* Main content */}
+   
       <div className={`flex-1 flex flex-col transition-all duration-300 ${collapsed ? 'lg:ml-16' : 'lg:ml-64'}`}>
         <header className="h-16 flex items-center border-b bg-card px-4 sticky top-0 z-30">
           <button onClick={() => setMobileOpen(true)} className="lg:hidden p-2 mr-2">
@@ -96,7 +96,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ links, accentClass = 
         </main>
       </div>
 
-      {/* Mobile overlay */}
+
       {mobileOpen && (
         <div className="fixed inset-0 bg-foreground/20 z-30 lg:hidden" onClick={() => setMobileOpen(false)} />
       )}
