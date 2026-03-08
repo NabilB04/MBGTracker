@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 
 // Public pages
 import LandingPage from "@/pages/public/LandingPage";
-import PublicDashboard from "@/pages/public/PublicDashboard";
+
 import MenuSekolahPage from "@/pages/public/MenuSekolahPage";
 import LaporanPage from "@/pages/public/LaporanPage";
 import MonitoringKasusPage from "@/pages/public/MonitoringKasusPage";
@@ -75,7 +75,7 @@ const App = () => (
             {/* Public routes */}
             <Route element={<PublicLayout />}>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/dashboard" element={<PublicDashboard />} />
+              <Route path="/dashboard" element={<LandingPage />} />
               <Route path="/menu-sekolah" element={<MenuSekolahPage />} />
               <Route path="/laporan" element={<LaporanPage />} />
               <Route path="/monitoring-kasus" element={<MonitoringKasusPage />} />
