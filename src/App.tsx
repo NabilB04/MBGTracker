@@ -11,7 +11,7 @@ import NotFound from "./pages/NotFound";
 
 // Public pages
 import LandingPage from "@/pages/public/LandingPage";
-import PublicDashboard from "@/pages/public/PublicDashboard";
+
 import MenuSekolahPage from "@/pages/public/MenuSekolahPage";
 import LaporanPage from "@/pages/public/LaporanPage";
 import MonitoringKasusPage from "@/pages/public/MonitoringKasusPage";

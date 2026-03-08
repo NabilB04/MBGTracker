@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const navLinks = [
   { label: 'Beranda', to: '/' },
-  { label: 'Dashboard', to: '/dashboard' },
+  
   { label: 'Menu Sekolah', to: '/menu-sekolah' },
   { label: 'Laporan', to: '/laporan' },
   { label: 'Monitoring Kasus', to: '/monitoring-kasus' },
