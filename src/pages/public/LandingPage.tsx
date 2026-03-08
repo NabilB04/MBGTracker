@@ -5,6 +5,7 @@ import { School, Users, FileText, ArrowRight, Flame, Beef, Wheat, Droplets, Shie
 import { BarChart, Bar, LineChart, Line, RadarChart, PolarGrid, PolarAngleAxis, Radar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, AreaChart, Area } from 'recharts';
 import StatCard from '@/components/StatCard';
 
+
 const CountUpNumber: React.FC<{ end: number; suffix?: string; decimals?: number }> = ({ end, suffix = '', decimals = 0 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -252,160 +253,208 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Issues / News */}
-      <section className="py-20">
+
+      {/* Issues / News — IMPROVED */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Berita Terkini</span>
+          <div className="text-center mb-14">
+            <span className="text-sm font-semibold text-primary uppercase tracking-widest">Edukasi Terkini</span>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">Highlight Isu Terkini</h2>
-            <p className="text-muted-foreground mt-2">Informasi terbaru seputar program MBG di Indonesia</p>
+            <p className="text-muted-foreground mt-2 max-w-lg mx-auto">Informasi terbaru seputar program Makan Bergizi Gratis di seluruh Indonesia</p>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {issues.map((issue, i) => (
-              <div key={i} className="bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group animate-fade-in border border-border/50" style={{ animationDelay: `${i * 100}ms` }}>
-                <div className="w-full h-40 bg-muted flex items-center justify-center text-5xl group-hover:scale-105 transition-transform duration-300">
-                  {issue.emoji}
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs bg-primary/10 text-primary font-medium px-2 py-0.5 rounded-full">{issue.tag}</span>
-                    <span className="text-xs text-muted-foreground">{issue.date}</span>
-                  </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2 leading-snug">{issue.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{issue.desc}</p>
-                  <button className="flex items-center gap-1 text-sm text-primary font-medium mt-3 hover:gap-2 transition-all">
-                    Selengkapnya <ChevronRight className="h-4 w-4" />
-                  </button>
-                </div>
+
+            <div className="group relative bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden border border-border/50 flex flex-col animate-fade-in">
+ 
+              <div className="relative h-44 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 opacity-10"
+                  style={{ backgroundImage: 'radial-gradient(circle at 70% 30%, hsl(var(--destructive)) 0%, transparent 60%)' }} />
+
+                <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="drop-shadow-md">
+
+                  <rect x="30" y="20" width="38" height="52" rx="4" fill="#f97316" opacity="0.9"/>
+                  <rect x="34" y="24" width="30" height="20" rx="2" fill="white" opacity="0.8"/>
+                  <text x="49" y="38" textAnchor="middle" fontSize="8" fill="#f97316" fontWeight="bold">UHT</text>
+                  <rect x="34" y="48" width="30" height="3" rx="1" fill="white" opacity="0.5"/>
+                  <rect x="34" y="54" width="20" height="3" rx="1" fill="white" opacity="0.5"/>
+     
+                  <circle cx="78" cy="28" r="14" fill="#ef4444" opacity="0.15"/>
+                  <circle cx="78" cy="28" r="10" fill="none" stroke="#ef4444" strokeWidth="2"/>
+                  <line x1="73" y1="23" x2="83" y2="33" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"/>
+                  <line x1="83" y1="23" x2="73" y2="33" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"/>
+                  {/* Label kadaluarsa */}
+                  <rect x="22" y="76" width="64" height="16" rx="8" fill="#ef4444" opacity="0.9"/>
+                  <text x="54" y="88" textAnchor="middle" fontSize="8" fill="white" fontWeight="bold">KADALUARSA</text>
+                </svg>
+                <span className="absolute top-3 left-3 text-xs bg-red-500 text-white font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                  {/* Shield alert icon */}
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                  </svg>
+                  Investigasi
+                </span>
               </div>
-            ))}
+              <div className="p-5 flex flex-col flex-1">
+                <span className="text-xs text-muted-foreground mb-2">7 Mar 2026</span>
+                <h3 className="font-heading font-semibold text-foreground mb-2 leading-snug">Temuan Susu Kadaluarsa di SDN Menteng 2</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">Petugas menemukan 50 kotak susu UHT yang melewati tanggal kedaluwarsa dalam gudang penyimpanan.</p>
+                <button className="flex items-center gap-1 text-sm text-red-500 font-medium mt-4 hover:gap-2 transition-all">
+                  Selengkapnya
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+
+            <div className="group relative bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden border border-border/50 flex flex-col animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <div className="relative h-44 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 opacity-10"
+                  style={{ backgroundImage: 'radial-gradient(circle at 30% 70%, #22c55e 0%, transparent 60%)' }} />
+                <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="drop-shadow-md">
+
+                  <rect x="20" y="60" width="14" height="22" rx="3" fill="#86efac"/>
+                  <rect x="40" y="48" width="14" height="34" rx="3" fill="#4ade80"/>
+                  <rect x="60" y="36" width="14" height="46" rx="3" fill="#22c55e"/>
+                  <rect x="80" y="22" width="14" height="60" rx="3" fill="#16a34a"/>
+
+                  <circle cx="95" cy="18" r="10" fill="#22c55e" opacity="0.9"/>
+                  <polyline points="90,18 94,22 101,13" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+        
+                  <polyline points="22,58 40,44 62,34 82,20" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" strokeDasharray="4 2"/>
+                </svg>
+                <span className="absolute top-3 left-3 text-xs bg-green-500 text-white font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  Positif
+                </span>
+              </div>
+              <div className="p-5 flex flex-col flex-1">
+                <span className="text-xs text-muted-foreground mb-2">5 Mar 2026</span>
+                <h3 className="font-heading font-semibold text-foreground mb-2 leading-snug">Peningkatan Kualitas Menu di SPPG Ciputat</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">SPPG Ciputat berhasil meningkatkan skor gizi rata-rata dari 72 menjadi 88 dalam 2 bulan terakhir.</p>
+                <button className="flex items-center gap-1 text-sm text-green-600 font-medium mt-4 hover:gap-2 transition-all">
+                  Selengkapnya
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Card 3 – Lingkungan */}
+            <div className="group relative bg-card rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden border border-border/50 flex flex-col animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="relative h-44 bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-950/30 dark:to-cyan-950/30 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 opacity-10"
+                  style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #14b8a6 0%, transparent 60%)' }} />
+                <svg width="120" height="100" viewBox="0 0 120 100" fill="none" className="drop-shadow-md">
+                  {/* Daur ulang / leaf */}
+                  <circle cx="60" cy="50" r="30" fill="#99f6e4" opacity="0.4"/>
+                  {/* Leaf shape */}
+                  <path d="M60 25 C80 25 85 45 70 60 C60 70 40 65 40 50 C40 35 50 25 60 25Z" fill="#14b8a6" opacity="0.85"/>
+                  <path d="M60 70 C60 70 58 55 65 45" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                  {/* Recycle arrows */}
+                  <path d="M30 55 Q25 45 35 38" stroke="#0d9488" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+                  <path d="M35 38 L30 33 M35 38 L40 35" stroke="#0d9488" strokeWidth="2" strokeLinecap="round"/>
+                  {/* Percent badge */}
+                  <circle cx="88" cy="25" r="12" fill="#0d9488" opacity="0.9"/>
+                  <text x="88" y="30" textAnchor="middle" fontSize="9" fill="white" fontWeight="bold">-40%</text>
+                </svg>
+                <span className="absolute top-3 left-3 text-xs bg-teal-500 text-white font-semibold px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                  </svg>
+                  Lingkungan
+                </span>
+              </div>
+              <div className="p-5 flex flex-col flex-1">
+                <span className="text-xs text-muted-foreground mb-2">3 Mar 2026</span>
+                <h3 className="font-heading font-semibold text-foreground mb-2 leading-snug">Program Zero Waste di SDN Cibubur 3</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">Inisiatif pengurangan sisa makanan berhasil mengurangi limbah organik hingga 40% dalam sebulan.</p>
+                <button className="flex items-center gap-1 text-sm text-teal-600 font-medium mt-4 hover:gap-2 transition-all">
+                  Selengkapnya
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+          <div className="text-center mt-10">
+            <Link to="/edukasi">
+              <Button variant="outline" size="lg" className="rounded-xl px-8">
+                Lihat Semua Berita <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-sm text-muted-foreground font-medium mb-8 uppercase tracking-wider">Didukung Oleh</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 max-w-4xl mx-auto">
-            {partners.map((p, i) => (
-              <div key={i} className="px-6 py-3 bg-card rounded-xl shadow-card text-sm font-medium text-muted-foreground border border-border/50">
-                {p}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
-      <section className="py-20 gradient-hero relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-white/5 blur-3xl" />
-        <div className="container mx-auto px-4 text-center relative">
-          <span className="text-5xl block mb-4">📢</span>
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-            Punya keluhan soal makanan di sekolah?
-          </h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-md mx-auto">Suara Anda penting! Laporkan sekarang agar segera ditindaklanjuti oleh pihak berwenang.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link to="/laporan">
-              <Button size="lg" variant="secondary" className="rounded-xl px-8 h-12 text-base">
-                Buat Laporan <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link to="/monitoring-kasus">
-              <Button size="lg" variant="ghost" className="rounded-xl px-8 h-12 text-base text-primary-foreground border border-primary-foreground/30 hover:bg-white/10">
-                Lihat Monitoring Kasus
-              </Button>
-            </Link>
+      <section className="py-24 gradient-hero relative overflow-hidden">
+
+        <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none" />
+
+        <div className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-3xl mx-auto text-center">
+
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                </svg>
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-white/25 backdrop-blur flex items-center justify-center shadow-lg">
+                <svg className="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                </svg>
+              </div>
+              <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+            </div>
+
+            <h2 className="font-heading text-2xl md:text-4xl font-bold text-primary-foreground mb-4 leading-tight">
+              Punya keluhan soal makanan di sekolah?
+            </h2>
+            <p className="text-primary-foreground/80 mb-8  text-base leading-relaxed">
+              Suara Anda penting! Laporkan sekarang agar segera ditindaklanjuti oleh pihak berwenang dan tim monitoring kami.
+            </p>
+
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link to="/laporan">
+                <Button size="lg" variant="secondary" className="rounded-xl px-8 h-12 text-base font-semibold shadow-lg hover:scale-105 transition-transform">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                  </svg>
+                  Buat Laporan
+                </Button>
+              </Link>
+              <Link to="/monitoring-kasus">
+                <Button size="lg" variant="ghost" className="rounded-xl px-8 h-12 text-base text-primary-foreground border border-primary-foreground/30 hover:bg-white/10">
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                  Lihat Monitoring Kasus
+                </Button>
+              </Link>
+            </div>
+
+           
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
-        {/* Main footer */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {/* Brand */}
-            <div className="lg:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">🍱</span>
-                <span className="font-heading font-bold text-xl">GiziTrack</span>
-              </div>
-              <p className="text-secondary-foreground/60 text-sm leading-relaxed mb-6">
-                Platform monitoring program Makan Bergizi Gratis untuk memastikan setiap anak Indonesia mendapatkan nutrisi terbaik.
-              </p>
-              <div className="flex items-center gap-3">
-                {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
-                  <a key={i} href="#" className="w-9 h-9 rounded-lg bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <Icon className="h-4 w-4" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Menu Utama</h4>
-              <ul className="space-y-2.5">
-                {['Dashboard', 'Menu Sekolah', 'Laporan Warga', 'Monitoring Kasus', 'Edukasi Gizi', 'AI Scanner'].map((item, i) => (
-                  <li key={i}>
-                    <Link to={['/', '/menu-sekolah', '/laporan', '/monitoring-kasus', '/edukasi', '/ai-scanner'][i]} className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1">
-                      <ChevronRight className="h-3 w-3" />{item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Info */}
-            <div>
-              <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Informasi</h4>
-              <ul className="space-y-2.5">
-                {['Tentang Program MBG', 'Kebijakan Privasi', 'Syarat & Ketentuan', 'FAQ', 'Panduan Pelaporan'].map((item, i) => (
-                  <li key={i}>
-                    <a href="#" className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors flex items-center gap-1">
-                      <ChevronRight className="h-3 w-3" />{item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-heading font-semibold mb-4 text-sm uppercase tracking-wider">Hubungi Kami</h4>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3 text-sm text-secondary-foreground/60">
-                  <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
-                  <span>Jl. Jenderal Sudirman Kav. 52-53, Jakarta Selatan 12190</span>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-secondary-foreground/60">
-                  <Phone className="h-4 w-4 shrink-0 text-primary" />
-                  <span>(021) 1234-5678</span>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-secondary-foreground/60">
-                  <Mail className="h-4 w-4 shrink-0 text-primary" />
-                  <span>info@gizitrack.id</span>
-                </li>
-              </ul>
-              <div className="mt-5 p-4 rounded-xl bg-secondary-foreground/5 border border-secondary-foreground/10">
-                <p className="text-xs text-secondary-foreground/60">Hotline Pengaduan 24 Jam</p>
-                <p className="font-heading font-bold text-primary text-lg mt-1">1500-MBG</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-secondary-foreground/10">
-          <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-secondary-foreground/40">© 2026 GiziTrack — Platform Monitoring MBG Indonesia. Hak cipta dilindungi.</p>
-            <p className="text-xs text-secondary-foreground/40">Dikelola oleh Kementerian Pendidikan & Kebudayaan RI</p>
-          </div>
-        </div>
-      </footer>
+   
     </div>
   );
 };

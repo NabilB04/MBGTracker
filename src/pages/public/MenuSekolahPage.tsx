@@ -67,7 +67,7 @@ const MenuSekolahPage: React.FC = () => {
       <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
         <DialogContent className="max-w-lg">
           <DialogHeader>
-            <DialogTitle className="font-heading">{selected && getSekolahName(selected.sekolahId)} — {selected?.tanggal}</DialogTitle>
+            <DialogTitle className="font-heading">{selected && getSekolahName(selected.sekolahId)} {selected?.tanggal}</DialogTitle>
           </DialogHeader>
           {selected && (
             <div className="space-y-3">

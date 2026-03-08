@@ -8,6 +8,18 @@ import PrivateRoute from "@/components/PrivateRoute";
 import PublicLayout from "@/components/PublicLayout";
 import DashboardLayout from "@/components/DashboardLayout";
 import NotFound from "./pages/NotFound";
+import {
+  LayoutDashboard,
+  ClipboardList,
+  Store,
+  UtensilsCrossed,
+  Trash2,
+  Settings,
+  Home,
+  PlusCircle,
+  BarChart2,
+  CalendarDays,
+} from 'lucide-react';
 
 // Public pages
 import LandingPage from "@/pages/public/LandingPage";
@@ -41,29 +53,29 @@ import MenuHariIniPage from "@/pages/sekolah/MenuHariIniPage";
 
 const queryClient = new QueryClient();
 
+
 const adminLinks = [
-  { icon: '📊', label: 'Dashboard Utama', to: '/admin' },
-  { icon: '📋', label: 'Manajemen Laporan', to: '/admin/laporan' },
-  { icon: '🍽️', label: 'Data SPPG', to: '/admin/sppg' },
-  { icon: '🥘', label: 'Data Makanan', to: '/admin/makanan' },
-  { icon: '🗑️', label: 'Data Sampah', to: '/admin/sampah' },
-  { icon: '⚙️', label: 'Pengaturan', to: '/admin/pengaturan' },
+  { icon: LayoutDashboard,   label: 'Dashboard Utama',    to: '/admin' },
+  { icon: ClipboardList,     label: 'Manajemen Laporan',  to: '/admin/laporan' },
+  { icon: Store,             label: 'Data SPPG',          to: '/admin/sppg' },
+  { icon: UtensilsCrossed,   label: 'Data Makanan',       to: '/admin/makanan' },
+  { icon: Trash2,            label: 'Data Sampah',        to: '/admin/sampah' },
+  { icon: Settings,          label: 'Pengaturan',         to: '/admin/pengaturan' },
 ];
 
 const sppgLinks = [
-  { icon: '🏠', label: 'Beranda', to: '/sppg' },
-  { icon: '➕', label: 'Input Menu Hari Ini', to: '/sppg/input-menu' },
-  { icon: '📊', label: 'Monitoring Sampah', to: '/sppg/monitoring-sampah' },
-  { icon: '📅', label: 'Riwayat Menu', to: '/sppg/riwayat-menu' },
+  { icon: Home,         label: 'Beranda',             to: '/sppg' },
+  { icon: PlusCircle,   label: 'Input Menu Hari Ini', to: '/sppg/input-menu' },
+  { icon: BarChart2,    label: 'Monitoring Sampah',   to: '/sppg/monitoring-sampah' },
+  { icon: CalendarDays, label: 'Riwayat Menu',        to: '/sppg/riwayat-menu' },
 ];
 
 const sekolahLinks = [
-  { icon: '🏠', label: 'Beranda', to: '/sekolah' },
-  { icon: '🗑️', label: 'Input Sisa Makanan', to: '/sekolah/input-sampah' },
-  { icon: '📋', label: 'Riwayat Laporan', to: '/sekolah/riwayat-sampah' },
-  { icon: '🍽️', label: 'Menu Hari Ini', to: '/sekolah/menu-hari-ini' },
+  { icon: Home,          label: 'Beranda',           to: '/sekolah' },
+  { icon: Trash2,        label: 'Input Sisa Makanan',to: '/sekolah/input-sampah' },
+  { icon: ClipboardList, label: 'Riwayat Laporan',   to: '/sekolah/riwayat-sampah' },
+  { icon: UtensilsCrossed, label: 'Menu Hari Ini',   to: '/sekolah/menu-hari-ini' },
 ];
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

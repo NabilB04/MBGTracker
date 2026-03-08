@@ -74,10 +74,10 @@ const LoginPage: React.FC = () => {
           </form>
 
           <div className="text-xs text-muted-foreground bg-muted rounded-lg p-3">
-            <p className="font-semibold mb-1">Demo credentials:</p>
-            <p>Admin: admin@mbg.id / admin123</p>
-            <p>SPPG: sppg@mbg.id / sppg123</p>
-            <p>Sekolah: sekolah@mbg.id / sekolah123</p>
+            <p className="font-semibold mb-1">Akun Demo</p>
+            <p>Admin = admin@mbg.id / admin123</p>
+            <p>SPPG = sppg@mbg.id / sppg123</p>
+            <p>Sekolah = sekolah@mbg.id / sekolah123</p>
           </div>
         </div>
       </div>

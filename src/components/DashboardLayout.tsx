@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { Menu, X, LogOut, ChevronLeft } from 'lucide-react';
+import { Menu, X, LogOut, ChevronLeft, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SidebarLink {
-  icon: string;
+  icon: LucideIcon;
   label: string;
   to: string;
 }
@@ -57,7 +57,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ links, accentClass = 
                   active ? 'bg-foreground/15 text-secondary-foreground' : 'text-secondary-foreground/70 hover:bg-foreground/10 hover:text-secondary-foreground'
                 }`}
               >
-                <span className="text-base">{link.icon}</span>
+                <link.icon className="text-base" />
                 {!collapsed && <span>{link.label}</span>}
               </Link>
             );
