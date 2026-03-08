@@ -59,7 +59,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm text-secondary-foreground/60">
                   <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
-                  <span>Jl. Jenderal Sudirman Kav. 52-53, Jakarta Selatan 12190</span>
+                  <span>Jl. Kalimantam Jember</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-secondary-foreground/60">
                   <Phone className="h-4 w-4 shrink-0 text-primary" />
@@ -81,7 +81,7 @@ const Footer = () => {
        
         <div className="border-t border-secondary-foreground/10">
           <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-secondary-foreground/40">© 2026 MbgTrack — Platform Monitoring MBG Indonesia. Hak cipta dilindungi.</p>
+            <p className="text-xs text-secondary-foreground/40">© 2026 MbgTrack  Platform Monitoring MBG Indonesia. Hak cipta dilindungi.</p>
             <p className="text-xs text-secondary-foreground/40">Dikelola oleh Kementerian Pendidikan & Kebudayaan RI</p>
           </div>
         </div>
